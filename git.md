@@ -1,6 +1,8 @@
+<img width="257" alt="스크린샷 2021-04-06 오전 4 29 14" src="https://user-images.githubusercontent.com/74029066/113616906-b0c3a180-9690-11eb-9682-46c99caf207a.png">
+
 # Git & Github
 
-* Git : 버전 컨트롤시스템, 명령어기반. 
+* Git : 서버 파일 관리, 프로젝트 협업, 코드와 자원 공유, 수정 충돌 방지를 위한 버전 관리 시스템 
 1. 많이사용되어지고 무료다.  
 2. 오픈소스,빠른동작.  
 3. 오프라인가능, 실수수정이 용이.  
@@ -8,7 +10,7 @@
 
 * .git directory에 있는 commit들은 history창고다. 버전별로 나눠관리 할수 있기때문에 앱전체를 commit하기보다 세분화해서 저장하는것이 좋다.
 
-* Github : server와 같은 cloud역활. 서버와 개발자가 동일한 히스토리 정보를 가진다. 서버는 회사가 지닌 private server 와 bitbucket 도 등등 있다.
+* Github :Git 기반의 코드 공유 서비스 server와 같은 cloud역활. 서버와 개발자가 동일한 히스토리 정보를 가진다. 서버는 회사가 지닌 private server 와 bitbucket 도 등등 있다.
 
 * git홈페이지에 source tree 등등 GUI도 간편하게 나와있음.
 
