@@ -17,9 +17,13 @@ ___
 
 1. 문자형(String)
 ```js
+const jihyun = 'jihyun'
 let txt1 = "문자 큰따옴표";
 let txt2 = '숫자문자 작은따옴표';
+let txt3 = 'hello' + jihyun;
+let txt4 = `hi ${jihyun}!`//템플릿리터럴
 ```
+* 문자열을 합칠때 코트에 넣어서 일일히 + 기호를 넣는것보다 벡틱키를 이용하면 문자열이 그대로 사용된다.
 2. 숫자형(Number)
 
 ```js
@@ -29,19 +33,17 @@ let num = 10; //정수와 실수 따옴표없이
 * 불리언(Booleans)은 true 이나  false 라는 값을 가지는 참/거짓을 표현하는 데이터 유형
 
 4. Null  
-* 아무 값도 없고, 해당변수가 어떤객체도 가리키지않는 식별되지 않는 상태. 불리언 연산에서는 거짓을 나타냄.  
-* null 과 undefined 차이점 : 등록, 저장 여부이다.
-```js
+* 비어있는값이지만 변수에 할당된다. 불리언 연산에서는 거짓을 나타냄.
 
-typeof null        // object (ECMAScript 의 버그로, null이어야 함)
-typeof undefined   // undefined
+5. undefined
+* 선언되었지만 비었는지 값이 있는지 정해지지않은상태로
+let x;도 아무런값이 없는것
+
+```js
 null === undefined // false
 null  == undefined // true
-
 ```
 * null 은 값은 값이지만 값으로써 의미없는 특별한 값이 등록되어 있는 것이고, undefined 는 등록이 되어있지 않기 때문에 초기화도 정의되지도 않은 것.
-
-* undefined 는 미리 선언된 전역변수(전역 객체의 프로퍼티)이며, null 은 선언,등록을 하는 키워드.
 ```js
 // Number 변수 초기화
 let data1 = 0;
@@ -55,7 +57,22 @@ let data3 = false;//초기값이 false 인 것으로 보아 이 변수에는 tru
 // Object 변수 초기화
 let data4 = null; //깃값으로 null 을 넣어다는 의미는 소스코드 어디에선가 이 변수에 클래스의 인스턴스를 대입할 거
 ```
-___
+6. symbol
+* 고유한 식별자가 필요하거나 동시다발적으로 일어날수 있는 코드에서 우선순위를 주고싶을떄
+```js
+const symboll1 = symbol('id');
+const symboll2 = symbol('id');  
+//주어지는 string에 상관없이 고유한 식별자 생성
+console.log(symbol1 === symbol2); //false
+
+const gsymboll1 = symbol.for('id');
+const gsymboll2 = symbol.for('id'); //주어진 스트링에 맞는 심볼을만들어줘
+console.log(symbol1 === symbol2); //true 
+
+console.log(`value: ${symbol1.description}`);  
+//심볼을 그냥출력하면 에러가 나이떄문에 항상 .description 으로 스트링으로 변환해줘야 한다.
+
+```
 ## 지역변수와 전역변수
 1. block scope
 ```js

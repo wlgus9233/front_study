@@ -1,8 +1,10 @@
-<img width="257" alt="스크린샷 2021-04-06 오전 4 29 14" src="https://user-images.githubusercontent.com/74029066/113616906-b0c3a180-9690-11eb-9682-46c99caf207a.png">
+
 
 # Git & Github
+<img width="257" alt="스크린샷 2021-04-06 오전 4 29 14" src="https://user-images.githubusercontent.com/74029066/113616906-b0c3a180-9690-11eb-9682-46c99caf207a.png">
 
 * Git : 서버 파일 관리, 프로젝트 협업, 코드와 자원 공유, 수정 충돌 방지를 위한 버전 관리 시스템 
+
 1. 많이사용되어지고 무료다.  
 2. 오픈소스,빠른동작.  
 3. 오프라인가능, 실수수정이 용이.  
@@ -38,9 +40,9 @@ $ git init//git이 추적할 수 있도록 .git 폴더를 생성
 
 (택1)
 $ git add 파일이름 //특정파일만 커밋 (추천)
-git add . //전체파일 선택들
-git add -A
-git add *
+git add . //모든파일 하나로
+git add -A//변경사항 커밋
+git add * //전체파일
 git add *.파일버전
 
 git config -- global core.autocrlf true/input // 운영체제마다 줄바꿈할때 문자열달라짐을 방지하기위해 window=true,mac=input을 쓴다.window = cariage return + line feed (text\r\n)이기에 git으로 저장할때는 \r을 삭제하고 가져올떄는 \r을 붙힌다. mac은 line feed 하나만 들어가기에(\n) 상태변화가 없지만, 외부이메일을 복사해 붙여넣을때 실수로 \r이 들어가는걸 방지하기위해 input을 넣는것이다. 
@@ -48,15 +50,16 @@ git config -- global core.autocrlf true/input // 운영체제마다 줄바꿈할
 $ git commit -m "프로젝트메세지 내용"  
 //-m 옵션은 간단하게 한줄로 메시지를 작성하기 위함이며, 긴 메시지 작성이 필요하다면 git commit 명령어만 실행하면 타이틀과설명을 적을수있다.
 
-git remote //현폴더의 레파지토리 확인
+git remote //현재 설정된 원격이 있는지 확인. 현재 레파지토리확인.
 
-$ git remote add origin {remote repository 주소}// origin은 remote repository의 별칭, epository의 주소는 내 github 주소
+$ git remote add origin {새로만든 repository 주소}// origin은 remote repository의 별칭, epository의 주소는 내 github 주소
 
-$ git push origin {브랜치명} //master가 아닌 다른 branch로 push 하고 싶으면, 아래와 같이 master를 특정 브랜치명으로 바꿔서 명령어를 실행하면 됨.
+$ git push -u origin {브랜치명} //master가 아닌 다른 branch로 push 하고 싶으면, 아래와 같이 master를 특정 브랜치명으로 바꿔서 명령어를 실행하면 됨.
 
+파일업로드! 깃허브새로고침!
 ```
 ___
-## 작업진행하며 수정내용 업로드하기
+## 올린후 수정한거 또 업로드하기
 
 ```js
 $ git add 특정파일선택
@@ -115,5 +118,13 @@ git config --h //간단정보 확인
 
 ```
 ___
-
+## 오픈소스 기여한 경험이 있나요?
+___
+* fork 클릭 > forked from 상대저장소를 내것으로 가져옴 (내저장소 따로 상대저장소따로)
+* 주소창 바뀜(상대방꺼 포크해서 내저장소에 가져와서 그걸 다운로드 할수있는것) >  포크한 주소 복사
+* 클론 > 내문서에 들어오게됨 > 파일추가(수정)
+* 푸시 > 깃허브에 올라온 파일확인 
+* pull requests 눌러서 내가 수정한게 더 좋은것같을때, 수정할래? 메세지를 보내기 (크리에이트 풀 리퀘스트 눌름)
+* 최초개발자가 머지 풀 리퀘스트 누르면 원래 소스에 보내온거 합쳐짐.
+___
 더자세하게 알고싶다면 [깃허브기초](https://backlog.com/git-tutorial/kr/intro/intro1_1.html)
