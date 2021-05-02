@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding: 0;}
+        h1{padding: 20px 10px;}
+        span{display: block; padding-left: 10px; color: #999;}
+        input{margin-left: 50px; margin-top: 20px;}
+    </style>
+</head>
+
+<body>
+    <h1>kakao API를 이용한 book검색</h1>
+    <span>미움받을용기, 자바스크립트 등 검색해보세요.</span>
+    <input id="bookName" value="" type="text">
+    <button id="search">검색</button>
+    <p></p>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function (){
+            $("#search").click(function () {
+        $.ajax({
+            method: "GET",
+            url: "https://dapi.kakao.com/v3/search/book?target=title",
+            data: { query : $("#bookName").val() },
+            headers:{Authorization: "KakaoAK 8b8272171ac94c1c5231e35d5c3d1d2a"}
+        })
+            .done(function (msg) {
+                console.log(msg.documents[0].title);
+                console.log(msg.documents[0].thumbnail);
+                $( "p" ).append( "<strong>"+msg.documents[0].title+"</strong>" );
+                $( "p" ).append( "<img src='"+msg.documents[0].thumbnail+"'/>" );
+            }); 
+        });
+    });
+    </script>
+</body>
+
+</html>
